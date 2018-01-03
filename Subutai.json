@@ -6,7 +6,22 @@
     "template":   "ubuntu16",
     "peer_group":   "HTTP-GROUP",
     "size":   "MEDIUM"
-  } 
+   "expose": [
+     {
+       "protocol": "https" ,
+       "domain":  "cloud.env.subutai.cloud" ,        
+       "port_int": "80" ,
+       "port_ext": "443" 
+      },
+      {   
+        "protocol":    "tcp" ,
+        "domain":    "cloud.env.subutai.cloud" ,        
+        "port_int":    "22" ,
+        "port_ext":    "4040"
+     }
+   ]
+}
+                                                                                                           
 ],
  "sshKey":    "root" ,
  "peerGroups":   [
@@ -25,9 +40,9 @@
       "name":   "backup",
       "nodes_name":   [
         "backup-server"               
-     ]
-    } 
-   ]
+      ]
+     } 
+    ]
   }
 }
   
