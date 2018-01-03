@@ -1,0 +1,39 @@
+{
+ "name":   "SubutaiBlueprint",
+ "description":   "Environment   configuration   test   blueprint",  "nodes":   [
+ {
+   "name": "backup-server",
+    "template":   "ubuntu16",
+    "peer_group":   "HTTP-GROUP",
+    "size":   "MEDIUM"
+  } 
+],
+ "peerGroups":   [
+   {
+     "name": "HTTP-GROUP",              
+     "pricingPref":   {
+        "maxPrice":   "50"    
+       }
+     }
+  ], 
+  "configuration":   {
+    "playbook":  "https://github.com/platium/commands/archive/master.zip",        
+    "script":  "main.yml",
+    "groups": [
+    {
+      "name":   "backup",
+      "nodes_name":   [
+        "backup-server"               
+     ]
+     } 
+    ]
+   }
+}
+  
+  
+  
+             
+  
+                    
+                   
+    
