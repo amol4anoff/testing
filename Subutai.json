@@ -9,6 +9,7 @@
        "size":  "MEDIUM"
        }
       ],
+       "sshKey": "root",
        "peerGroups": [
        {
          "name": "HTTP-GROUP" ,             
