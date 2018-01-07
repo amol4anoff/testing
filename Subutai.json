@@ -1,55 +1,25 @@
-{
- "name":   "SubutaiBlueprint",
- "description":   "Environment   configuration   test   blueprint",  "nodes":   [
- {
-   "name": "backup-server",
-    "template":   "ubuntu16",
-    "peer_group":   "HTTP-GROUP",
-    "size":   "MEDIUM"
-   "expose": [
+{                 
+ "name":    "SubutaiBlueprint" ,
+ "description":    "Environment   configuration   test   blueprint" , 
+ "nodes":   [
      {
-       "protocol": "https" ,
-       "domain":  "cloud.env.subutai.cloud" ,        
-       "port_int": "80" ,
-       "port_ext": "443" 
-      },
-      {   
-        "protocol":    "tcp" ,
-        "domain":    "cloud.env.subutai.cloud" ,        
-        "port_int":    "22" ,
-        "port_ext":    "4040"
-     }
+       "name": "backup-server" ,
+       "template": "ubuntu16" ,
+       "peer_group": "HTTP-GROUP" ,
+       "size":  "MEDIUM"
+       }
+      ],
+       "peerGroups": [
+       {
+         "name": "HTTP-GROUP" ,             
+         "pricingPref": {
+            "maxPrice": "50"
+           },
+           "hwPreferences": {
+             "avgCpuLoad": "50",
+             "minFreeRam": "128MiB",
+             "minFreeDiskSpace": "500MiB"
+           }
+      }
    ]
 }
-                                                                                                           
-],
- "sshKey":    "root" ,
- "peerGroups":   [
-   {
-     "name": "HTTP-GROUP",              
-     "pricingPref":   {
-        "maxPrice":   "50"    
-       }
-     }
-  ]}
-  "configuration":   {
-    "playbook":  "https://github.com/platium/commands/archive/master.zip",        
-    "script":  "main.yml",
-    "groups": [
-    {
-      "name":   "backup",
-      "nodes_name":   [
-        "backup-server"               
-      ]
-     } 
-    ]
-  }
-}
-  
-  
-  
-             
-  
-                    
-                   
-    
