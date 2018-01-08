@@ -9,7 +9,7 @@
       "size": "TINY"
     }
   ],
-  "sshKey": "root",
+  "sshKey": "amolchanov",
   "peerGroups": [
     {
       "name": "HTTP-GROUP",
