@@ -1,25 +1,21 @@
-{                 
- "name":    "SubutaiBlueprint" ,
- "description":    "Environment   configuration   test   blueprint" , 
- "nodes":   [
-     {
-       "name": "backup-server" ,
-       "template": "ubuntu16" ,
-       "peer_group": "HTTP-GROUP" ,
-       "size":  "TINY"
-       }
-      ],
-       "peerGroups": [
-       {
-         "name": "HTTP-GROUP" ,             
-         "pricingPref": {
-            "maxPrice": "50"
-           },
-           "hwPreferences": {
-             "avgCpuLoad": "50",
-             "minFreeRam": "128MiB",
-             "minFreeDiskSpace": "500MiB"
-           }
+{
+  "name": "SubutaiBlueprint",
+  "description": "Environment configuration test blueprint",
+  "nodes": [
+    {
+      "name": "backup-server",
+      "template": "ubuntu16",
+      "peer_group": "HTTP-GROUP",
+      "size": "TINY"
+    }
+  ],
+  "sshKey": "root",
+  "peerGroups": [
+    {
+      "name": "HTTP-GROUP",
+      "pricingPref": {
+        "maxPrice": "50"
       }
-   ]
+    }
+  ]
 }
