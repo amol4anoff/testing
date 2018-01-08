@@ -6,10 +6,9 @@
        "name": "backup-server" ,
        "template": "ubuntu16" ,
        "peer_group": "HTTP-GROUP" ,
-       "size":  "MEDIUM"
+       "size":  "TINY"
        }
       ],
-       "sshKey": "root",
        "peerGroups": [
        {
          "name": "HTTP-GROUP" ,             
