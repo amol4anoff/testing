@@ -1,24 +1,21 @@
 {  
    "name":"SubutaiBlueprint",
    "description":"Environment  configuration  test  blueprint",
-   "nodes":[  
+   "containers":[  
       {  
-         "name":"backup-server",
+         "hostname":"backup-server",
          "template":"apache",
-         "peer_group":"HTTP-GROUP",
+         "peer-criteria":"HTTP-GROUP",
          "size":"SMALL"
       }
    ],
-   "peerGroups":[  
+   "peer-criteria":[  
       {  
-         "name":"HTTP-GROUP",
-         "pricingPref":{  
-            "maxPrice":"50"
-         },
-         "hwPreferences":{  
-            "avgCpuLoad":"50",
-            "minFreeRam":"128MiB",
-            "minFreeDiskSpace":"500MiB"
+         "name":"HTTP-GROUP"         "maxPrice":"50",
+         "resource-availability":{  
+            "avg-cpu-load":"50",
+            "min-free-ram":"128MiB",
+            "min-free-disk-space":"500MiB"
          }
       }
    ]
