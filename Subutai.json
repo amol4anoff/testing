@@ -2,8 +2,8 @@
  "name":  "SubutaiBlueprint",
  "description":  "Environment  configuration  test  blueprint", "nodes":  [
   {
-   "name":  "backup-server", "template":  "ubuntu16", "peer_group":  "HTTP-GROUP",
-    "size":  "MEDIUM"
+   "name":  "backup-server", "template":  "apache", "peer_group":  "HTTP-GROUP",
+    "size":  "SMALL"
      }
    ],
 "peerGroups":  [
