@@ -11,7 +11,7 @@
    ],
    "peer-criteria":[  
       {  
-         "name":"HTTP-GROUP"        
+         "name": "HTTP-GROUP"        
          "max-price": "50",
          "resource-availability":{  
             "avg-cpu-load": "50",
