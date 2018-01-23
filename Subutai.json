@@ -12,7 +12,7 @@
    "peer-criteria":[  
       {  
          "name":"HTTP-GROUP"        
-         "maxPrice":"50",
+         "maxPrice": "50",
          "resource-availability":{  
             "avg-cpu-load": "50",
             "min-free-ram":"128MiB",
