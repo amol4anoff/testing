@@ -1,19 +1,25 @@
-{
- "name":  "SubutaiBlueprint",
- "description":  "Environment  configuration  test  blueprint", "nodes":  [
-  {
-   "name":  "backup-server", "template":  "apache", "peer_group":  "HTTP-GROUP",
-    "size":  "SMALL"
-     }
+{  
+   "name":"SubutaiBlueprint",
+   "description":"Environment  configuration  test  blueprint",
+   "nodes":[  
+      {  
+         "name":"backup-server",
+         "template":"apache",
+         "peer_group":"HTTP-GROUP",
+         "size":"SMALL"
+      }
    ],
-"peerGroups":  [
-  {
-  "name":  "HTTP-GROUP",
-  "pricingPref":  { "maxPrice":  "50"
-  },
-  "hwPreferences":  {  "avgCpuLoad":  "50", "minFreeRam":  "128MiB", 
-      "minFreeDiskSpace":  "500MiB"
-   }
-  }
- ]
+   "peerGroups":[  
+      {  
+         "name":"HTTP-GROUP",
+         "pricingPref":{  
+            "maxPrice":"50"
+         },
+         "hwPreferences":{  
+            "avgCpuLoad":"50",
+            "minFreeRam":"128MiB",
+            "minFreeDiskSpace":"500MiB"
+         }
+      }
+   ]
 }
