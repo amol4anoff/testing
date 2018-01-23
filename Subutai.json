@@ -14,7 +14,7 @@
          "name":"HTTP-GROUP"        
          "maxPrice":"50",
          "resource-availability":{  
-            "avg-cpu-load":"50",
+            "avg-cpu-load": "50",
             "min-free-ram":"128MiB",
             "min-free-disk-space":"500MiB"
          }
