@@ -1,21 +1,21 @@
-{
-  "name": "SubutaiBlueprint",
-  "description": "Environment configuration test blueprint",
-  "nodes": [
-    {
-      "name": "backup-server",
-      "template": "ubuntu16",
-      "peer_group": "HTTP-GROUP",
-      "size": "TINY"
-    }
-  ],
-  "sshKey": "amolchanov",
-  "peerGroups": [
-    {
-      "name": "HTTP-GROUP",
-      "pricingPref": {
-        "maxPrice": "50"
+{  
+   "name":"SubutaiBlueprint",
+   "description":"Environment configuration test blueprint",
+   "nodes":[  
+      {  
+         "name":"backup-server",
+         "template":"ubuntu16",
+         "peer_group":"HTTP-GROUP",
+         "size":"TINY"
       }
-    }
-  ]
+   ],
+   "sshKey":"amolchanov",
+   "peerGroups":[  
+      {  
+         "name":"HTTP-GROUP",
+         "pricingPref":{  
+            "maxPrice":"50"
+         }
+      }
+   ]
 }
