@@ -1,5 +1,5 @@
 {
-	"name": "SubutaiBlueprint",
+        "name": "SubutaiBlueprint",
 	"description": "Environment  configuration  test  blueprint",
 	"containers": [{
 		"hostname": "backup-server",
@@ -12,8 +12,8 @@
 	        "max-price": "50",
 	        "avg-cpu-load": "50",
 	        "min-free-ram": "128",
-	        "min-free-disk-space": "10
-    }
-   ]
+	        "min-free-disk-space": "10"
+      }
+    ]
   }
 }
