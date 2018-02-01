@@ -11,12 +11,11 @@
    ],
    "peer-criteria":[  
       {  
-         "name": "HTTP-GROUP",        
-         "max-price": "50",
-         "resource-availability":{  
-            "avg-cpu-load": "50",
-            "min-free-ram":"128MiB",
-            "min-free-disk-space":"500MiB"
+         "name": "HTTP-GROUP",
+	      "max-price": "50",
+	      "avg-cpu-load": "50",
+	      "min-free-ram": "128",
+	      "min-free-disk-space": "10"
          }
       }
    ]
