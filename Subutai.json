@@ -3,7 +3,7 @@
 	"description": "Environment  configuration  test  blueprint",
 	"containers": [{
 		"hostname": "backup-server",
-		"template": "apache",
+		"template": "ubuntu14",
 		"peer-criteria": "HTTP-GROUP",
 		"size": "SMALL"
 	}],
