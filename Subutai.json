@@ -1,24 +1,81 @@
 {
-  "name": "Simple-bluprint",
-  "description": "Simple blueprint",
-  "nodes": [
+  "name": "${envName}",
+  "description": "mattermost",
+  "version": "1.0.1",
+  "author": "Alina",
+  "containers": [
     {
-      "name": "master",
-      "template": "redis",
-      "peer_group": "MASTER-GROUP-1",
-      "size": "LARGE"
+      "hostname": "mysql",
+      "template": "mysql@1297432ca164899d498c80dd49042",
+      "peer-criteria": "HTTP-GROUP",
+      "size": "${mysqlDBtype}"
+    },
+    {
+      "hostname": "mattermost",
+      "template": "mattermost@280dcda67a67d071970ff838d0331c33c0c04710",
+      "peer-criteria": "HTTP-GROUP",
+      "size": "${mattermostContainerType}",
+      "port-mapping": [
+        {
+          "protocol": "HTTP",
+          "domain": "${domain}",
+          "internal-port": "8065",
+          "external-port": "80"
+        }
+      ]
     }
   ],
-  "peerGroups": [
+  "peer-criteria": [
     {
-      "name": "MASTER-GROUP-1",
-      "maxPeersInGroup": "1",
-      "hwPreferences": {
-        "avgCpuLoad": "10",
-        "minFreeRam": "512MiB",
-        "minFreeDiskSpace": "500MiB"
+      "name": "HTTP-GROUP",
+      "max-price": "${maxPeersPrice}"
+    }
+  ],
+    "groups": [
+      {
+        "name": "db",
+        "hostnames": [
+          "mysql"
+        ]
+      },
+      {
+        "name": "mattermost",
+        "hostnames": [
+          "mattermost"
+        ]
       }
+    ]
+  },
+  "user-variables": {
+    "domain": {
+      "description": "Select your domain or create new one",
+      "type": "domain",
+      "default": "mattermost.envs.subutai.cloud",
+      "validation": "[a-zA-Z0-9.-]+"
+    },
+    "mysqlDBtype": {
+      "description": "You can set LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "LARGE,HUGE"
+    },
+    "mattermostContainerType": {
+      "description": "You can set LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "LARGE,HUGE"
+    },
+    "maxPeersPrice": {
+      "description": "To search and find the best initial peers for you to select from, enter the maximum GoodWill / hour (GW/h) limit you might be willing to pay while running this application on rented peers? You can still select free peers, your peers, and others based on price before installing the application.",
+      "type": "int",
+      "default": "50",
+      "validation": "\\d+"
+    },
+    "envName": {
+      "description": "Enter your environment name",
+      "type": "string",
+      "default": "mattermost env",
+      "validation": "[a-zA-Z0-9]+"
     }
-  ],
-  "configuration": {}
+  }
 }
