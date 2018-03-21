@@ -1,19 +1,24 @@
 {
-        "name": "SubutaiBlueprint",
-	"description": "Environment  configuration  test  blueprint",
-	"containers": [{
-		"hostname": "backup-server",
-		"template": "ubuntu14",
-		"peer-criteria": "HTTP-GROUP",
-		"size": "SMALL"
-	}],
-	"peer-criteria": [{
-	        "name": "HTTP-GROUP",
-	        "max-price": "50",
-	        "avg-cpu-load": "50",
-	        "min-free-ram": "128",
-	        "min-free-disk-space": "10"
+  "name": "Simple-bluprint",
+  "description": "Simple blueprint",
+  "nodes": [
+    {
+      "name": "master",
+      "template": "redis",
+      "peer_group": "MASTER-GROUP-1",
+      "size": "LARGE"
+    }
+  ],
+  "peerGroups": [
+    {
+      "name": "MASTER-GROUP-1",
+      "maxPeersInGroup": "1",
+      "hwPreferences": {
+        "avgCpuLoad": "10",
+        "minFreeRam": "512MiB",
+        "minFreeDiskSpace": "500MiB"
       }
-    ]
-  }
+    }
+  ],
+  "configuration": {}
 }
