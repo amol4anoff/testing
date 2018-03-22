@@ -26,6 +26,15 @@
             "max-price": "25"
         }
     ],
+    "ansible-configuration": {
+        "source-url": "https://github.com/lbthomsen/subutai-blueprint-nginx/archive/master.zip",
+        "ansible-playbook": "site.yml",
+        "extra-vars": [
+            {
+                "key": "domain_name",
+                "value": "${domainName}"
+            }
+        ],
         "groups": [
             {
                 "name": "ws",
